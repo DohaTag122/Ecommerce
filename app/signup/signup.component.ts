@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
       
   });
 }
-onSubmit(){
+submitForm(){
   var currentUser = [];
   currentUser[0] = this.signupForm.value['username'];
   currentUser[1] = this.signupForm.value['email'];

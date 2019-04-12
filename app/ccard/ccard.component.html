@@ -3,11 +3,20 @@
   
     <div  *ngFor="let prodect of prodects">
        <div *ngIf="arrData[prodect.ProductId]!== 0">
-         <p>{{arrData[1]}}</p>
-            <p>{{prodect.Name}}</p>
-            <a routerLink="/prodect/{{prodect.ProductId}}">
-                <img  src="{{prodect.ProductPicUrl}}"></a>
-              <p>{{prodect.Price}} $</p>
-        </div>
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary"> Quantity :{{arrData[prodect.ProductId]}}</strong>
+                <h3 class="mb-0">{{prodect.Name}}</h3>
+                <div class="mb-1 text-muted">Nov 12</div>
+                <p class="card-text mb-auto">{{prodect.Description}}</p>
+               
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img  src="{{prodect.ProductPicUrl}}">
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
- </div>

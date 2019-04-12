@@ -19,7 +19,7 @@
         <div class="form-group">
             <label for="email">Your Email</label>
             <input
-            type="text"
+            type="email"
             id="email"
             formControlName="email"
             class="form-control">
@@ -31,7 +31,7 @@
           <div class="form-group">
               <label for="password">Your Password</label>
               <input
-              type="text"
+              type="password"
               id="password"
               formControlName="password"
               class="form-control">
@@ -40,8 +40,8 @@
               class="help-block" >Please enter a valid Password</span>
               
             </div>
-            <button class="btn btn-primary"  routerLink="/home" type="submit">Submit</button>
-            <button class="btn btn-primary"  routerLink="/login" type="submit">Login</button>
+            <button class="btn btn-primary" (click)="submitForm()" routerLink="/home" type="button">Submit</button>
+            <button class="btn btn-primary"  routerLink="/login" type="button">Login</button>
       </form>
     </div>
     

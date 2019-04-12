@@ -2,10 +2,21 @@
 <div style="margin: 70px;">
     <div  *ngFor="let prodect of prodects">
        <div *ngIf="prodect.ProductId == id">
-            <p>{{prodect.Name}}</p>
-            <a routerLink="/prodect/{{prodect.ProductId}}">
-                <img  src="{{prodect.ProductPicUrl}}"></a>
-              <p>{{prodect.Price}} $</p>
+        <div class="row mb-2">
+            <div class="col-md-6">
+              <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+     
+                  <h3 class="mb-0">{{prodect.Name}}</h3>
+                  <div class="mb-1 text-muted">Nov 12</div>
+                  <p class="card-text mb-auto">{{prodect.Description}}</p>
+                  <a routerLink="/card" (click)="onClick(prodect.ProductId )" class="stretched-link">Add to Card</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img  src="{{prodect.ProductPicUrl}}">
+                </div>
+              </div>
+            </div>
         </div>
     </div>
  </div>

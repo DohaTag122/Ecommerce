@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,7 +29,10 @@ export class LoginComponent implements OnInit {
     {
       console.log("congration");
     }
-  
+    else{
+     // return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+    }
+    
   }
 }
 

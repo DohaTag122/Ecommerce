@@ -16,7 +16,7 @@
             type="text"
             id="email"
             formControlName="email"
-            class="form-control">
+            class="form-control" required>
             <span
           *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"
           class="help-block" >Please enter a valid Email</span>
@@ -25,17 +25,17 @@
           <div class="form-group">
               <label for="password">Your Password</label>
               <input
-              type="text"
+              type="password"
               id="password"
               formControlName="password"
-              class="form-control">
+              class="form-control" required>
               <span
               *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"
               class="help-block" >Please enter a valid Password</span>
               
             </div>
-            <button class="btn btn-primary"  routerLink="/home" type="submit">Submit</button>
-            <button class="btn btn-primary"  routerLink="/signup" type="submit">Sign Up</button>
+            <button class="btn btn-primary" (click)="onSubmit()"  routerLink="/home" type="button">Submit</button>
+            <button class="btn btn-primary"  routerLink="/signup" type="button">Sign Up</button>
       </form>
     </div>
     

@@ -18,7 +18,7 @@ export class CcardComponent implements OnInit {
     var retriveData = localStorage.getItem("Card");
     var myData = JSON.parse(retriveData);
     
-    this.arrData[0]=String(myData[0]);
+    this.arrData[0]=myData[0];
     this.arrData[1]=myData[1];
    this.arrData[2]=myData[2];
    this. arrData[3]=myData[3];
