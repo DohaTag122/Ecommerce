@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div style="margin: 70px;">
+<div  *ngFor="let prodect of prodects">
+ 
+  <div  >
+  <p>{{prodect.Name}}</p>
+  <a routerLink="/prodect/{{prodect.ProductId}}">
+      <img  src="{{prodect.ProductPicUrl}}"></a>
+    <p>{{prodect.Price}} $</p>
+ <a routerLink="/prodect">see details</a>
+    <button  type="button" routerLink="/card" (click)="onClick(prodect.ProductId )" class="btn btn-success">ADD TO CARD</button>
+    <button type="button" class="btn btn-info">ADD TO WishList</button>
+    
+  </div>
+
+</div>
+</div>

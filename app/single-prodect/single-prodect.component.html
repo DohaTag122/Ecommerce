@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div style="margin: 70px;">
+    <div  *ngFor="let prodect of prodects">
+       <div *ngIf="prodect.ProductId == id">
+            <p>{{prodect.Name}}</p>
+            <a routerLink="/prodect/{{prodect.ProductId}}">
+                <img  src="{{prodect.ProductPicUrl}}"></a>
+              <p>{{prodect.Price}} $</p>
+        </div>
+    </div>
+ </div>

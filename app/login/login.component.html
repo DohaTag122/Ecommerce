@@ -1,0 +1,44 @@
+
+<main role="main" class="container">
+
+  <div  style="margin: 70px;" class="starter-template">
+    <h1></h1>
+    <h1> </h1>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+
+      
+      <form [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+      
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input
+            type="text"
+            id="email"
+            formControlName="email"
+            class="form-control">
+            <span
+          *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"
+          class="help-block" >Please enter a valid Email</span>
+           
+          </div>
+          <div class="form-group">
+              <label for="password">Your Password</label>
+              <input
+              type="text"
+              id="password"
+              formControlName="password"
+              class="form-control">
+              <span
+              *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"
+              class="help-block" >Please enter a valid Password</span>
+              
+            </div>
+            <button class="btn btn-primary"  routerLink="/home" type="submit">Submit</button>
+            <button class="btn btn-primary"  routerLink="/signup" type="submit">Sign Up</button>
+      </form>
+    </div>
+    
+  </div>
+  <router-outlet></router-outlet>
+</main><!-- /.container -->
