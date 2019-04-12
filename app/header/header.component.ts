@@ -10,11 +10,12 @@ export class HeaderComponent implements OnInit {
   prodects:Prodects[]
   arrData=[];
   wishData=[];
+  name:string
   constructor(private prodectsService:ProdectsService) { }
 
   ngOnInit() {
     this.prodects=this.prodectsService.getProdects();
-    
+    if( localStorage.getItem("Card")){
     var retriveData = localStorage.getItem("Card");
     var myData = JSON.parse(retriveData);
     
@@ -27,7 +28,8 @@ export class HeaderComponent implements OnInit {
    this. arrData[6]=myData[6];
    this. arrData[7]=myData[7];
    this. arrData[8]=myData[8];
-    
+    }
+    if(localStorage.getItem("wish")){
     var retriveData1 = localStorage.getItem("wish");
     var mywish = JSON.parse(retriveData1);
     console.log(mywish);
@@ -42,9 +44,14 @@ export class HeaderComponent implements OnInit {
    this. wishData[7]=mywish[7];
    this. wishData[8]=mywish[8];
 
-    
-
-
+    }
+    if(localStorage.getItem("CurrentUser")){
+   var retriveData2 = localStorage.getItem("CurrentUser");
+   var currentUser = JSON.parse(retriveData2);
+   this.name=currentUser[0];
+    }
+  
   }
+
 
 }

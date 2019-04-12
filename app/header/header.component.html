@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">{{name}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,13 +11,12 @@
       </li>
     
       <li ngbDropdown class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MYCard</a>
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MYCart</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
             <ng-container *ngFor="let product of prodects">
-                <li *ngIf="arrData[product.ProductId]!== 0">
-                  <p>{{product.Name}}</p>
-                  <p>{{arrData[product.ProductId]}}</p>
-                 
+                <li *ngIf="arrData[product.ProductId]> 0">
+                  <p>{{product.Name}}||{{arrData[product.ProductId]}}</p>
+              
                 </li>
             </ng-container>
         </div>
@@ -26,16 +25,16 @@
           <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">WishList</a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
               <ng-container *ngFor="let product of prodects">
-                  <li *ngIf="wishData[product.ProductId]!== 0">
-                    <p>{{product.Name}}</p>
-                    <p>{{wishData[product.ProductId]}}</p>
+                  <li *ngIf="wishData[product.ProductId] > 0">
+                    <p>{{product.Name}}||{{wishData[product.ProductId]}}</p>
+                    <p></p>
                    
                   </li>
               </ng-container>
           </div>
         </li>
         <li>
-          <button ></button>
+          <button  class="btn btn-danger" routerLink="/">Logout</button>
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
