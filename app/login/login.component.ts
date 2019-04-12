@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( private activatedRoute: ActivatedRoute, 
+    private router: Router) { }
   loginForm:FormGroup;
   ngOnInit() {
     this.loginForm=new FormGroup({
@@ -20,17 +22,17 @@ export class LoginComponent implements OnInit {
   });
   }
   onSubmit(){
-    //var currentUser=[];
+    
       var retriveData = localStorage.getItem("CurrentUser");
       var currentUser = JSON.parse(retriveData);
-   // console.log(movies2);
+   
 
     if(this.loginForm.value['email']===currentUser[1] && String(this.loginForm.value['password'])===currentUser[2]) 
     {
-      console.log("congration");
-    }
-    else{
-     // return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+      this.router.navigate(['home']);    
+   
+    } else{
+      this.router.navigate(['/']); 
     }
     
   }

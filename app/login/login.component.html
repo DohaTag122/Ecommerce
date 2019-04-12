@@ -34,11 +34,13 @@
               class="help-block" >Please enter a valid Password</span>
               
             </div>
-            <button class="btn btn-primary" (click)="onSubmit()"  routerLink="/home" type="button">Submit</button>
-            <button class="btn btn-primary"  routerLink="/signup" type="button">Sign Up</button>
+            <button class="btn btn-success" (click)="onSubmit()"   type="button">Submit</button>
+           
       </form>
     </div>
-    
+    <button class="btn btn-link"  routerLink="/signup" type="button">Sign Up</button>
   </div>
+ 
+
   <router-outlet></router-outlet>
 </main><!-- /.container -->
