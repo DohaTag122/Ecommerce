@@ -65,7 +65,7 @@
           <ng-container *ngFor="let product of prodects">
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top item-image" src="{{product.ProductPicUrl}}" alt=""></a>
+                <a routerLink="/prodect/{{product.ProductId}}"><img class="card-img-top item-image" src="{{product.ProductPicUrl}}" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">{{product.Name}}</a>
@@ -76,6 +76,7 @@
                 <div class="btn-group">
                     <button type="button" (click)="onClick(product.ProductId )" routerLink="/card" class="btn btn-success">Add to Card</button>
                     <button type="button" (click)="wish(product.ProductId )" class="btn btn-info">Add to WishList</button>
+                    <button type="button"  routerLink="/prodect/{{product.ProductId}}" class="btn btn-warning">See More</button>
                   </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
