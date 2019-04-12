@@ -17,7 +17,7 @@
                 <li *ngIf="arrData[product.ProductId]!== 0">
                   <p>{{product.Name}}</p>
                   <p>{{arrData[product.ProductId]}}</p>
-                  <p><img class="card-img-top item-image" src="{{product.ProductPicUrl}}" alt=""></p>
+                 
                 </li>
             </ng-container>
         </div>
@@ -29,10 +29,13 @@
                   <li *ngIf="wishData[product.ProductId]!== 0">
                     <p>{{product.Name}}</p>
                     <p>{{wishData[product.ProductId]}}</p>
-                    <p><img class="card-img-top item-image" src="{{product.ProductPicUrl}}" alt=""></p>
+                   
                   </li>
               </ng-container>
           </div>
+        </li>
+        <li>
+          <button ></button>
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

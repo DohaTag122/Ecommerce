@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.prodects=this.prodectsService.getProdects();
+    
     var retriveData = localStorage.getItem("Card");
     var myData = JSON.parse(retriveData);
     
@@ -26,11 +27,10 @@ export class HeaderComponent implements OnInit {
    this. arrData[6]=myData[6];
    this. arrData[7]=myData[7];
    this. arrData[8]=myData[8];
-
-
-   this.prodects=this.prodectsService.getProdects();
-    var retriveData = localStorage.getItem("wish");
-    var mywish = JSON.parse(retriveData);
+    
+    var retriveData1 = localStorage.getItem("wish");
+    var mywish = JSON.parse(retriveData1);
+    console.log(mywish);
     
    this.wishData[0]=mywish[0];
    this.wishData[1]=mywish[1];
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
    this. wishData[7]=mywish[7];
    this. wishData[8]=mywish[8];
 
-
+    
 
 
   }
